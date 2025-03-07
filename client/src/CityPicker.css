@@ -1,0 +1,65 @@
+/* src/CityPicker.css */
+.city-picker {
+    position: relative;
+    width: 100%;
+  }
+  
+  .city-input {
+    width: 22%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .city-input:disabled {
+    background-color: #f0f0f0;
+    cursor: not-allowed;
+  }
+  
+  .city-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .city-search {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  .city-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 180px;
+    overflow-y: auto;
+  }
+  
+  .city-item {
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
+  .city-item:hover,
+  .city-item.highlighted {
+    background-color: #f0f0f0;
+  }
+  
+  .highlight {
+    font-weight: bold;
+    color: #1C3575;
+  }

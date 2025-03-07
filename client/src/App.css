@@ -1,0 +1,300 @@
+/* Import Fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&family=Mulish&display=swap');
+
+/* Base Styles for the App */
+.App {
+  text-align: center;
+  min-height: 100vh;
+  font-family: 'Mulish', sans-serif;
+}
+
+/* Home Page Background */
+.home-background {
+  min-height: 100vh;
+  min-width: 100vw;
+  background-image: url('./images/ck-blue-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Header Text for Branding */
+.header-text {
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Yeseva One', serif;
+  font-size: 2.3vw;
+  color: #1C3575;
+  z-index: 10;
+}
+
+/* Navigation and Authentication Options (Top-Right) */
+.auth-options {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  z-index: 10;
+  padding: 1vw;
+}
+
+.auth-options a {
+  margin: 0 0.1vw;
+  padding: 0.5vw 1.2vw;
+  font-size: 1.2vw;
+  background-color: #1C3575;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Yeseva One', serif;
+}
+
+.auth-options a:hover {
+  background-color: #3D475E;
+}
+
+/* Cart Icon and Badge */
+.cart-icon {
+  position: relative;
+  margin-left: 2vw;
+  font-size: 2vw;
+  cursor: pointer;
+  color: #1C3575;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -1vw;
+  right: -1vw;
+  background-color: #1C3575;
+  color: #FFFFFF;
+  border-radius: 50%;
+  width: 1.8vw;
+  height: 1.8vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1vw;
+  font-family: 'Mulish', sans-serif;
+}
+
+/* Product Container */
+.product-container {
+  margin-top: 10vw;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1vw;
+}
+
+/* Product Grid Layout - Custom Grid for 4 + 3 Products */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns for the first row */
+  grid-template-rows: auto auto; /* Two rows */
+  gap: 2vw; /* Consistent spacing */
+  width: 100%;
+}
+
+/* Target the first 4 products for the first row */
+.product:nth-child(-n+4) {
+  grid-row: 1; /* First row */
+}
+
+/* Target the last 3 products for the second row */
+.product:nth-child(n+5) {
+  grid-row: 2; /* Second row */
+  grid-column: span 1; /* Each takes one column */
+}
+
+/* Product Items */
+.product {
+  padding: 1vw;
+  width: 100%; /* Full width within grid cell */
+  background-color: transparent;
+  border-radius: 4px;
+  text-align: left;
+  min-height: 30vw;
+  font-family: 'Mulish', sans-serif;
+  box-sizing: border-box;
+}
+
+.product img {
+  width: 100%;
+  height: 15vw;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.product h3 {
+  margin: 0.5vw 0 0.25vw;
+  font-size: 1.2vw;
+  color: #1C3575;
+  font-family: 'Yeseva One', serif;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.product p {
+  margin: 0.25vw 0;
+  font-size: 0.8vw;
+  color: #000000;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+/* Add to Cart Button */
+.add-to-cart-btn {
+  margin-top: auto;
+  padding: 0.7vw 0.8vw;
+  background-color: #1C3575;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1vw;
+  font-family: 'Mulish', sans-serif;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #3D475E;
+}
+
+/* Quantity Controls */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  margin: 1vw 0;
+}
+
+.quantity-btn {
+  width: 3vw;
+  height: 3vw;
+  background-color: #1C3575;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5vw;
+  font-family: 'Mulish', sans-serif;
+}
+
+.quantity {
+  font-size: 1.5vw;
+  color: #1C3575;
+}
+
+/* Checkout Page Styles */
+.checkout-page {
+  max-width: 800px;
+  margin: 5vw auto;
+  padding: 2vw;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  font-family: 'Mulish', sans-serif;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .header-text {
+    font-size: 6vw;
+    top: 5%;
+  }
+  
+  .auth-options a {
+    font-size: 2.5vw;
+    padding: 1.5vw 3vw;
+  }
+  
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 products per row on mobile */
+    grid-template-rows: auto auto auto auto; /* 4 rows for 7 products */
+  }
+  
+  .product:nth-child(-n+4) {
+    grid-row: auto; /* Let them flow naturally */
+  }
+  
+  .product:nth-child(n+5) {
+    grid-row: auto; /* Let them flow naturally */
+  }
+  
+  .product {
+    width: 100%;
+    min-height: 80vw;
+  }
+  
+  .product img {
+    height: 40vw;
+  }
+  
+  .product h3 {
+    font-size: 4vw;
+    margin: 1vw 0;
+  }
+  
+  .product p {
+    font-size: 3vw;
+  }
+  
+  .add-to-cart-btn {
+    font-size: 3vw;
+    padding: 1.5vw 3vw;
+  }
+  
+  .cart-icon {
+    font-size: 4vw;
+  }
+  
+  .cart-badge {
+    width: 3.5vw;
+    height: 3.5vw;
+    font-size: 2vw;
+    top: -2vw;
+    right: -2vw;
+  }
+  
+  .quantity-btn {
+    width: 6vw;
+    height: 6vw;
+    font-size: 3vw;
+  }
+  
+  .quantity {
+    font-size: 3vw;
+  }
+}
+
+/* Additional Media Query for Tablet Sizes */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 products per row on tablets */
+    grid-template-rows: auto auto auto; /* 3 rows for 7 products */
+  }
+  
+  .product:nth-child(-n+4) {
+    grid-row: auto; /* Let them flow naturally */
+  }
+  
+  .product:nth-child(n+5) {
+    grid-row: auto; /* Let them flow naturally */
+  }
+  
+  .product {
+    width: 100%;
+  }
+}
